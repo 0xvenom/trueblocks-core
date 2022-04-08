@@ -74,10 +74,12 @@ bool COptions::process_reconciliation(CTraverser* trav) {
                 }
                 if (backLevel) {
                     // LOG_WARN(cYellow, "Updating statements", cOff);
+                    printf("@! -------- process_reconciliation");
                     trav->searchOp = UPDATE;
                     cacheIfReconciled(trav, true /* isNew */);
                     slowQueries++;
                     reportFreq = 1;
+                    printf("== -------- done: process_reconciliation");
                 }
                 return !shouldQuit();
                 //             } else {
